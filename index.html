@@ -1,555 +1,482 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <meta name="theme-color" content="#0D0D0D">
-  <meta name="description" content="GigShield AI — AI-Powered Parametric Insurance for Food Delivery Gig Workers.">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <title>GigShield AI — Gig Worker Insurance</title>
-  <link rel="stylesheet" href="styles.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0A0A0A">
+  <meta name="description"
+    content="GigShield AI — AI-Powered Parametric Insurance for Gig Workers. Zero-touch claims, instant payouts, weekly micro-premiums.">
+  <title>GigShield AI — Protect Your Gig Income</title>
+  <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="landing.css">
 </head>
+
 <body>
 
-  <!-- Top Navigation -->
-  <nav class="top-nav">
-    <div class="nav-brand">
-      <div class="nav-logo"><i class="fa-solid fa-shield-halved"></i></div>
-      <span>GigShield</span>
+  <!-- Animated BG -->
+  <div class="bg-grid"></div>
+  <div class="bg-glow bg-glow-1"></div>
+  <div class="bg-glow bg-glow-2"></div>
+  <canvas id="particles"></canvas>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="#" class="nav-brand">
+        <div class="nav-logo"><i class="fa-solid fa-shield-halved"></i></div>
+        <span>GigShield AI</span>
+      </a>
+      <div class="nav-links">
+        <a href="#problem" class="nav-link active">Problem</a>
+        <a href="#solution" class="nav-link">Solution</a>
+        <a href="#how-it-works" class="nav-link">How It Works</a>
+        <a href="#pricing" class="nav-link">Pricing</a>
+        <a href="#ai" class="nav-link">AI Engine</a>
+      </div>
+      <div class="nav-cta">
+        <a href="login.html" class="btn-nav-outline">View Dashboard</a>
+        <a href="login.html" class="btn-nav-primary"><i class="fa-solid fa-bolt"></i> Get Protected</a>
+      </div>
+      <button class="mobile-toggle" id="mobileToggle" aria-label="Menu"><i class="fa-solid fa-bars"></i></button>
     </div>
-    <div class="nav-actions">
-      <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
-        <i class="fa-solid fa-sun icon-sun"></i>
-        <i class="fa-solid fa-moon icon-moon"></i>
-      </button>
-      <button class="nav-btn" onclick="showToast('No new notifications')"><i class="fa-solid fa-bell"></i></button>
-      <div class="nav-avatar" id="navAvatar" onclick="navigateTo('page-profile')">R</div>
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#problem">Problem</a>
+      <a href="#solution">Solution</a>
+      <a href="#how-it-works">How It Works</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#ai">AI Engine</a>
+      <a href="login.html" class="btn-nav-primary" style="margin-top:12px;text-align:center;display:block;">Get
+        Protected</a>
     </div>
   </nav>
 
-  <main class="app-content">
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="badge-dot"></span>
+        <span>AI-Powered Parametric Insurance</span>
+        <span class="badge-tag">Guidewire DEVTrails 2026</span>
+      </div>
+      <h1 class="hero-title">
+        Protect Your <span class="text-glow">Gig Income</span><br>
+        From <span class="pixel-font">Disruptions</span>
+      </h1>
+      <p class="hero-sub">Zero-touch claims. Instant payouts. Weekly micro-premiums.<br>Built for India's 7.5M+ food
+        delivery partners on Zomato & Swiggy.</p>
+      <div class="hero-features">
+        <span><i class="fa-solid fa-bolt"></i> Instant Payouts</span>
+        <span><i class="fa-solid fa-robot"></i> AI-Driven</span>
+        <span><i class="fa-solid fa-clock"></i> Zero Wait</span>
+        <span><i class="fa-solid fa-shield-halved"></i> Fraud-Proof</span>
+      </div>
+      <div class="hero-ctas">
+        <a href="login.html" class="btn-primary"><i class="fa-solid fa-bolt"></i> Get Protected <i
+            class="fa-solid fa-arrow-right"></i></a>
+        <a href="login.html" class="btn-outline">View Dashboard</a>
+      </div>
+    </div>
+    <div class="scroll-hint"><span>Scroll to explore</span> <i class="fa-solid fa-arrow-down"></i></div>
+  </section>
 
-    <!-- ==================== HOME ==================== -->
-    <section id="page-home" class="page-view active">
-
-      <p class="section-label" style="margin-top:0">Welcome back</p>
-      <h1 class="page-title" id="homeUserName">Ravi Kumar</h1>
-      <p class="page-subtitle" id="homeUserSub">Zomato & Swiggy Partner · Bangalore</p>
-
-      <!-- Balance Card -->
-      <div class="balance-card">
-        <div class="balance-label">Total Savings from Claims</div>
-        <div class="balance-amount"><span class="currency">₹</span>4,650</div>
-        <div class="balance-row">
-          <span class="balance-meta">Plan: <strong>Smart Shield</strong></span>
-          <span class="badge-active"><span class="dot"></span> Active</span>
+  <!-- PROBLEM -->
+  <section class="section" id="problem">
+    <div class="section-inner">
+      <p class="section-tag"><i class="fa-solid fa-triangle-exclamation"></i> The Problem</p>
+      <h2 class="section-title">Gig Workers Lose <span class="text-glow">20–50%</span> of Income to Disruptions</h2>
+      <p class="section-desc">India's 7.5M+ food delivery partners have <strong>zero income protection</strong> against
+        extreme weather, pollution, and social disruptions.</p>
+      <div class="loss-grid">
+        <div class="loss-card">
+          <div class="loss-icon"><i class="fa-solid fa-cloud-showers-heavy"></i></div>
+          <h4>Heavy Rain</h4>
+          <div class="loss-bar">
+            <div class="loss-fill" style="width:70%"></div>
+          </div>
+          <div class="loss-stats"><span>₹12,600</span><span class="loss-pct">-30%</span></div>
+        </div>
+        <div class="loss-card">
+          <div class="loss-icon heat"><i class="fa-solid fa-temperature-arrow-up"></i></div>
+          <h4>Extreme Heat</h4>
+          <div class="loss-bar">
+            <div class="loss-fill heat" style="width:80%"></div>
+          </div>
+          <div class="loss-stats"><span>₹14,400</span><span class="loss-pct">-20%</span></div>
+        </div>
+        <div class="loss-card">
+          <div class="loss-icon flood"><i class="fa-solid fa-water"></i></div>
+          <h4>Flood / Curfew</h4>
+          <div class="loss-bar">
+            <div class="loss-fill flood" style="width:50%"></div>
+          </div>
+          <div class="loss-stats"><span>₹9,000</span><span class="loss-pct">-50%</span></div>
+        </div>
+        <div class="loss-card">
+          <div class="loss-icon aqi"><i class="fa-solid fa-smog"></i></div>
+          <h4>AQI Spike</h4>
+          <div class="loss-bar">
+            <div class="loss-fill aqi" style="width:60%"></div>
+          </div>
+          <div class="loss-stats"><span>₹10,800</span><span class="loss-pct">-40%</span></div>
         </div>
       </div>
+    </div>
+  </section>
 
-      <!-- Quick Actions -->
-      <div class="action-grid">
-        <button class="action-item" onclick="navigateTo('page-premium')">
-          <div class="action-icon lime"><i class="fa-solid fa-calculator"></i></div>
-          <span>Premium</span>
-        </button>
-        <button class="action-item" onclick="navigateTo('page-claims')">
-          <div class="action-icon green"><i class="fa-solid fa-receipt"></i></div>
-          <span>Claims</span>
-        </button>
-        <button class="action-item" onclick="navigateTo('page-monitor')">
-          <div class="action-icon blue"><i class="fa-solid fa-tower-broadcast"></i></div>
-          <span>Monitor</span>
-        </button>
-        <button class="action-item" onclick="navigateTo('page-profile')">
-          <div class="action-icon orange"><i class="fa-solid fa-gear"></i></div>
-          <span>Settings</span>
-        </button>
+  <!-- SOLUTION -->
+  <section class="section section-alt" id="solution">
+    <div class="section-inner">
+      <p class="section-tag"><i class="fa-solid fa-sparkles"></i> Our Solution</p>
+      <h2 class="section-title">Insurance That <span class="text-glow">Works Automatically</span></h2>
+      <p class="section-desc">GigShield AI detects disruptions, triggers claims, and delivers instant payouts — all
+        without lifting a finger.</p>
+      <div class="compare-grid">
+        <div class="compare-card old">
+          <h3><i class="fa-solid fa-xmark"></i> Traditional Insurance</h3>
+          <ul>
+            <li><i class="fa-solid fa-xmark"></i> Manual claims, 15–30 days</li>
+            <li><i class="fa-solid fa-xmark"></i> Payout takes weeks to months</li>
+            <li><i class="fa-solid fa-xmark"></i> Monthly/Annual premiums</li>
+            <li><i class="fa-solid fa-xmark"></i> Subjective assessment</li>
+            <li><i class="fa-solid fa-xmark"></i> Manual fraud review</li>
+          </ul>
+        </div>
+        <div class="compare-card new">
+          <div class="compare-badge">GigShield AI</div>
+          <h3><i class="fa-solid fa-check"></i> GigShield AI</h3>
+          <ul>
+            <li><i class="fa-solid fa-check"></i> Zero-touch, automated claims</li>
+            <li><i class="fa-solid fa-check"></i> Instant payout (&lt;1 hour)</li>
+            <li><i class="fa-solid fa-check"></i> Weekly micro-premiums (₹29/wk)</li>
+            <li><i class="fa-solid fa-check"></i> Parametric data-driven triggers</li>
+            <li><i class="fa-solid fa-check"></i> AI-powered real-time fraud detection</li>
+          </ul>
+        </div>
       </div>
+    </div>
+  </section>
 
-      <!-- Coverage Banner -->
-      <p class="section-label">Active Coverage</p>
-      <div class="coverage-banner">
-        <div class="coverage-left">
+  <!-- HOW IT WORKS -->
+  <section class="section" id="how-it-works">
+    <div class="section-inner">
+      <p class="section-tag"><i class="fa-solid fa-gears"></i> How It Works</p>
+      <h2 class="section-title">From <span class="text-glow">Disruption</span> to <span class="text-glow">Payout</span>
+        in Under 1 Hour</h2>
+      <div class="steps-grid">
+        <div class="step-card">
+          <div class="step-num">01</div>
+          <div class="step-icon"><i class="fa-solid fa-user-plus"></i></div>
+          <h4>Onboarding</h4>
+          <p>Quick sign-up with Aadhaar + Platform ID. AI calculates your zone risk profile.</p>
+        </div>
+        <div class="step-connector"><i class="fa-solid fa-arrow-right"></i></div>
+        <div class="step-card">
+          <div class="step-num">02</div>
+          <div class="step-icon"><i class="fa-solid fa-shield-halved"></i></div>
+          <h4>Choose Plan</h4>
+          <p>Pick Basic, Smart, or Total Shield. Pay weekly micro-premiums via UPI.</p>
+        </div>
+        <div class="step-connector"><i class="fa-solid fa-arrow-right"></i></div>
+        <div class="step-card">
+          <div class="step-num">03</div>
+          <div class="step-icon"><i class="fa-solid fa-satellite-dish"></i></div>
+          <h4>AI Monitors</h4>
+          <p>Real-time Weather, AQI, Govt alerts, and traffic data monitored 24/7.</p>
+        </div>
+        <div class="step-connector"><i class="fa-solid fa-arrow-right"></i></div>
+        <div class="step-card highlight">
+          <div class="step-num">04</div>
+          <div class="step-icon"><i class="fa-solid fa-indian-rupee-sign"></i></div>
+          <h4>Instant Payout</h4>
+          <p>Auto-claim triggered. Fraud check done. UPI payout within 1 hour.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SCENARIOS -->
+  <section class="section section-alt" id="scenarios">
+    <div class="section-inner">
+      <p class="section-tag"><i class="fa-solid fa-bolt"></i> Real Scenarios</p>
+      <h2 class="section-title">See <span class="text-glow pixel-font">GigShield</span> in Action</h2>
+      <div class="scenario-grid">
+        <div class="scenario-card">
+          <div class="scenario-icon rain"><i class="fa-solid fa-cloud-showers-heavy"></i></div>
+          <div class="scenario-city">Mumbai</div>
+          <h4>Heavy Rainfall</h4>
+          <p>3 days of >65mm rain → Ravi can't deliver → Auto-claim triggered</p>
+          <div class="scenario-payout">₹1,950 <span>paid in &lt;1 hr</span></div>
+        </div>
+        <div class="scenario-card">
+          <div class="scenario-icon heat"><i class="fa-solid fa-temperature-arrow-up"></i></div>
+          <div class="scenario-city">Delhi</div>
+          <h4>Extreme Heat Wave</h4>
+          <p>45°C+ for 4 days → Platform reduces slots → 4hrs/day lost</p>
+          <div class="scenario-payout">₹1,040 <span>auto-payout</span></div>
+        </div>
+        <div class="scenario-card">
+          <div class="scenario-icon curfew"><i class="fa-solid fa-ban"></i></div>
+          <div class="scenario-city">Hyderabad</div>
+          <h4>Unplanned Curfew</h4>
+          <p>NLP confirms via news + govt advisory → 2 days shutdown</p>
+          <div class="scenario-payout">₹1,300 <span>auto-payout</span></div>
+        </div>
+        <div class="scenario-card">
+          <div class="scenario-icon aqi"><i class="fa-solid fa-smog"></i></div>
+          <div class="scenario-city">Delhi</div>
+          <h4>AQI Spike (GRAP IV)</h4>
+          <p>AQI >450 → 40% work reduction → Proportional payout</p>
+          <div class="scenario-payout">₹780 <span>proportional</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section class="section" id="pricing">
+    <div class="section-inner">
+      <p class="section-tag"><i class="fa-solid fa-tags"></i> Pricing</p>
+      <h2 class="section-title">Weekly <span class="text-glow">Micro-Premiums</span> Starting ₹29</h2>
+      <p class="section-desc">AI-powered dynamic pricing. No annual lock-ins. Pay only when you need protection.</p>
+      <div class="pricing-grid">
+        <div class="pricing-card">
+          <div class="pricing-icon"><i class="fa-solid fa-shield"></i></div>
+          <h3>Basic Shield</h3>
+          <div class="pricing-amount">₹29<span>/week</span></div>
+          <ul>
+            <li><i class="fa-solid fa-check"></i> Weather disruptions only</li>
+            <li><i class="fa-solid fa-check"></i> Max payout: ₹1,500/week</li>
+            <li><i class="fa-solid fa-check"></i> Auto-triggered claims</li>
+            <li><i class="fa-solid fa-check"></i> UPI instant payout</li>
+          </ul>
+          <a href="login.html" class="btn-pricing">Get Started</a>
+        </div>
+        <div class="pricing-card featured">
+          <div class="pricing-popular">Most Popular</div>
+          <div class="pricing-icon"><i class="fa-solid fa-bolt"></i></div>
           <h3>Smart Shield</h3>
-          <p>Rain · Heat · AQI · Curfew</p>
+          <div class="pricing-amount">₹49<span>/week</span></div>
+          <ul>
+            <li><i class="fa-solid fa-check"></i> Weather + Pollution + Curfew</li>
+            <li><i class="fa-solid fa-check"></i> Max payout: ₹2,500/week</li>
+            <li><i class="fa-solid fa-check"></i> AI predictive alerts</li>
+            <li><i class="fa-solid fa-check"></i> WhatsApp notifications</li>
+            <li><i class="fa-solid fa-check"></i> No-claim bonus (15%)</li>
+          </ul>
+          <a href="https://gigshield-ai.netlify.app" class="btn-pricing featured">Get Protected <i
+              class="fa-solid fa-arrow-right"></i></a>
         </div>
-        <div class="coverage-badge">₹83/wk</div>
-      </div>
-
-      <!-- Stats Row -->
-      <div class="stat-row">
-        <div class="stat-card">
-          <div class="label">Claims Paid</div>
-          <div class="value lime">5</div>
-        </div>
-        <div class="stat-card">
-          <div class="label">Max Payout</div>
-          <div class="value green">₹2,500</div>
-        </div>
-      </div>
-      <div class="stat-row">
-        <div class="stat-card">
-          <div class="label">Avg Payout Time</div>
-          <div class="value white">&lt;1hr</div>
-        </div>
-        <div class="stat-card">
-          <div class="label">NCD Bonus</div>
-          <div class="value lime">15%</div>
-        </div>
-      </div>
-
-      <!-- AI Insight -->
-      <p class="section-label">AI Prediction</p>
-      <div class="insight-card">
-        <div class="insight-header">
-          <i class="fa-solid fa-microchip"></i>
-          <span>Smart Alert</span>
-        </div>
-        <p>Heavy rain predicted in your zone next week. Premium may increase by <strong>~10%</strong>. Expected disruption: <strong>2-3 days</strong>.</p>
-      </div>
-
-      <!-- Recent Claims -->
-      <p class="section-label">Recent Activity</p>
-      <div class="list-item">
-        <div class="list-icon rain"><i class="fa-solid fa-cloud-showers-heavy"></i></div>
-        <div class="list-info">
-          <h4>Heavy Rainfall — Mumbai</h4>
-          <p>12 Mar · Auto-triggered · 2 days</p>
-        </div>
-        <div class="list-right">
-          <div class="amount">+₹1,300</div>
-          <span class="tag paid">Paid</span>
+        <div class="pricing-card">
+          <div class="pricing-icon"><i class="fa-solid fa-fire"></i></div>
+          <h3>Total Shield</h3>
+          <div class="pricing-amount">₹79<span>/week</span></div>
+          <ul>
+            <li><i class="fa-solid fa-check"></i> All disruption types</li>
+            <li><i class="fa-solid fa-check"></i> Max payout: ₹4,000/week</li>
+            <li><i class="fa-solid fa-check"></i> Priority payout queue</li>
+            <li><i class="fa-solid fa-check"></i> Pre-coverage AI alerts</li>
+            <li><i class="fa-solid fa-check"></i> Dedicated support</li>
+          </ul>
+          <a href="https://gigshield-ai.netlify.app" class="btn-pricing">Get Started</a>
         </div>
       </div>
-      <div class="list-item">
-        <div class="list-icon heat"><i class="fa-solid fa-temperature-arrow-up"></i></div>
-        <div class="list-info">
-          <h4>Heat Wave — Delhi</h4>
-          <p>5 Mar · Auto-triggered · 4 days</p>
-        </div>
-        <div class="list-right">
-          <div class="amount">+₹1,040</div>
-          <span class="tag paid">Paid</span>
-        </div>
-      </div>
-      <div class="list-item">
-        <div class="list-icon aqi"><i class="fa-solid fa-smog"></i></div>
-        <div class="list-info">
-          <h4>AQI Spike — Delhi NCR</h4>
-          <p>18 Feb · Auto-triggered · 1 day</p>
-        </div>
-        <div class="list-right">
-          <div class="amount">+₹300</div>
-          <span class="tag paid">Paid</span>
-        </div>
-      </div>
-
-    </section>
-
-    <!-- ==================== PREMIUM ==================== -->
-    <section id="page-premium" class="page-view">
-
-      <h1 class="page-title">Calculate<br>Premium</h1>
-      <p class="page-subtitle">AI-powered dynamic weekly pricing</p>
-
-      <div class="insight-card">
-        <div class="insight-header">
-          <i class="fa-solid fa-brain"></i>
-          <span>Pricing Engine</span>
-        </div>
-        <p>Premium uses <strong>XGBoost</strong> zone risk, <strong>Prophet</strong> seasonal forecast, and <strong>LSTM</strong> weather prediction.</p>
-      </div>
-
-      <p class="section-label" style="margin-top:16px">Choose Plan</p>
-      <div class="plan-group">
-        <div class="plan-card" data-price="29" data-name="Basic Shield" onclick="selectPlan(this)">
-          <div class="plan-top">
-            <div class="plan-name"><i class="fa-solid fa-shield" style="color:var(--blue)"></i> Basic</div>
-            <div class="plan-price">₹29 <small>/wk</small></div>
-          </div>
-          <div class="plan-tags">
-            <span class="plan-tag">Weather Only</span>
-            <span class="plan-tag">Max ₹1,500/wk</span>
-          </div>
-        </div>
-        <div class="plan-card selected" data-price="49" data-name="Smart Shield" onclick="selectPlan(this)">
-          <div class="plan-badge-popular">Popular</div>
-          <div class="plan-top">
-            <div class="plan-name"><i class="fa-solid fa-bolt" style="color:var(--lime)"></i> Smart</div>
-            <div class="plan-price">₹49 <small>/wk</small></div>
-          </div>
-          <div class="plan-tags">
-            <span class="plan-tag">Weather</span>
-            <span class="plan-tag">AQI</span>
-            <span class="plan-tag">Curfew</span>
-            <span class="plan-tag">Max ₹2,500/wk</span>
-          </div>
-        </div>
-        <div class="plan-card" data-price="79" data-name="Total Shield" onclick="selectPlan(this)">
-          <div class="plan-top">
-            <div class="plan-name"><i class="fa-solid fa-fire" style="color:var(--orange)"></i> Total</div>
-            <div class="plan-price">₹79 <small>/wk</small></div>
-          </div>
-          <div class="plan-tags">
-            <span class="plan-tag">All Disruptions</span>
-            <span class="plan-tag">Priority Payout</span>
-            <span class="plan-tag">Max ₹4,000/wk</span>
-          </div>
-        </div>
-      </div>
-
-      <p class="section-label">Risk Profile</p>
-      <div class="form-group">
-        <label class="form-label">City / Zone</label>
-        <select class="form-select" id="calcCity" onchange="calculatePremium()">
-          <option value="mumbai">Mumbai — High Risk (82)</option>
-          <option value="delhi">Delhi — High Risk (75)</option>
-          <option value="bangalore" selected>Bangalore — Med Risk (48)</option>
-          <option value="chennai">Chennai — High Risk (80)</option>
-          <option value="pune">Pune — Low Risk (28)</option>
-          <option value="kolkata">Kolkata — High Risk (72)</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label class="form-label">Season</label>
-        <select class="form-select" id="calcSeason" onchange="calculatePremium()">
-          <option value="monsoon">Monsoon (Jun–Sep) — ×1.4</option>
-          <option value="summer" selected>Summer (Mar–May) — ×1.1</option>
-          <option value="winter">Winter (Oct–Feb) — ×0.9</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label class="form-label">Claims (6 months)</label>
-        <select class="form-select" id="calcClaims" onchange="calculatePremium()">
-          <option value="0" selected>0 Claims (15% Bonus)</option>
-          <option value="1-2">1–2 Claims (Standard)</option>
-          <option value="3+">3+ Claims (Higher)</option>
-        </select>
-      </div>
-
-      <div class="premium-result">
-        <div style="font-size:0.72rem;color:var(--text-tertiary);text-transform:uppercase;letter-spacing:1px;margin-bottom:4px;">Your Weekly Premium</div>
-        <div class="premium-amount" id="premiumAmount">₹0</div>
-        <div class="premium-period">per week · auto-deducted via UPI</div>
-        <div class="breakdown" id="premiumBreakdown"></div>
-      </div>
-
-      <button class="btn btn-lime" onclick="showToast('Plan activated! ₹83 deducted via UPI.')">
-        <i class="fa-solid fa-bolt"></i> Activate Coverage
-      </button>
-    </section>
-
-    <!-- ==================== CLAIMS ==================== -->
-    <section id="page-claims" class="page-view">
-
-      <h1 class="page-title">Claims &<br>Payouts</h1>
-      <p class="page-subtitle">All your automated claim history</p>
-
-      <div class="stat-row">
-        <div class="stat-card">
-          <div class="label">Total Payouts</div>
-          <div class="value lime">₹4,650</div>
-        </div>
-        <div class="stat-card">
-          <div class="label">Total Claims</div>
-          <div class="value white">5</div>
-        </div>
-      </div>
-
-      <div class="tabs" data-tab-group="claims">
-        <button class="tab-btn active" data-tab="all" onclick="switchTab('claims','all')">All</button>
-        <button class="tab-btn" data-tab="paid" onclick="switchTab('claims','paid')">Paid</button>
-        <button class="tab-btn" data-tab="process" onclick="switchTab('claims','process')">Processing</button>
-      </div>
-
-      <div data-tab-content-group="claims" data-tab-content="all">
-        <div class="list-item">
-          <div class="list-icon rain"><i class="fa-solid fa-cloud-showers-heavy"></i></div>
-          <div class="list-info">
-            <h4>Heavy Rainfall — Mumbai</h4>
-            <p>12 Mar 2026 · Auto-triggered · 2 days</p>
-          </div>
-          <div class="list-right">
-            <div class="amount">+₹1,300</div>
-            <span class="tag paid">Paid</span>
-          </div>
-        </div>
-        <div class="list-item">
-          <div class="list-icon heat"><i class="fa-solid fa-temperature-arrow-up"></i></div>
-          <div class="list-info">
-            <h4>Heat Wave — Delhi</h4>
-            <p>5 Mar 2026 · Auto-triggered · 4 days</p>
-          </div>
-          <div class="list-right">
-            <div class="amount">+₹1,040</div>
-            <span class="tag paid">Paid</span>
-          </div>
-        </div>
-        <div class="list-item">
-          <div class="list-icon aqi"><i class="fa-solid fa-smog"></i></div>
-          <div class="list-info">
-            <h4>AQI Spike — Delhi NCR</h4>
-            <p>18 Feb 2026 · Auto-triggered · 1 day</p>
-          </div>
-          <div class="list-right">
-            <div class="amount">+₹300</div>
-            <span class="tag paid">Paid</span>
-          </div>
-        </div>
-        <div class="list-item">
-          <div class="list-icon curfew"><i class="fa-solid fa-ban"></i></div>
-          <div class="list-info">
-            <h4>Curfew — Hyderabad</h4>
-            <p>2 Feb 2026 · NLP Verified · 2 days</p>
-          </div>
-          <div class="list-right">
-            <div class="amount">+₹1,300</div>
-            <span class="tag paid">Paid</span>
-          </div>
-        </div>
-        <div class="list-item">
-          <div class="list-icon flood"><i class="fa-solid fa-water"></i></div>
-          <div class="list-info">
-            <h4>Flooding — Chennai</h4>
-            <p>22 Jan 2026 · Auto-triggered · 1 day</p>
-          </div>
-          <div class="list-right">
-            <div class="amount">+₹710</div>
-            <span class="tag paid">Paid</span>
-          </div>
-        </div>
-      </div>
-
-      <div data-tab-content-group="claims" data-tab-content="paid" style="display:none;">
-        <p class="empty-msg">Switch to "All" tab to view claims</p>
-      </div>
-      <div data-tab-content-group="claims" data-tab-content="process" style="display:none;">
-        <p class="empty-msg">No claims are being processed</p>
-      </div>
-
-      <!-- Fraud Detection -->
-      <div class="insight-card" style="margin-top:16px;">
-        <div class="insight-header">
-          <i class="fa-solid fa-shield-halved"></i>
-          <span>Fraud Detection</span>
-        </div>
-        <p>4-layer pipeline: <strong>Parametric Validation</strong> → <strong>GPS Check</strong> → <strong>AI Anomaly</strong> → <strong>Duplicate Detection</strong>. Your fraud score: <strong>0.02</strong></p>
-      </div>
-
-      <button class="btn btn-lime" style="margin-top:12px;" onclick="openClaimModal()">
-        <i class="fa-solid fa-plus"></i> File Manual Claim
-      </button>
-    </section>
-
-    <!-- ==================== MONITOR ==================== -->
-    <section id="page-monitor" class="page-view">
-
-      <h1 class="page-title">Live<br>Monitor</h1>
-      <p class="page-subtitle" id="liveDateTime">Real-time disruption tracking</p>
-
-      <p class="section-label" style="margin-top:8px">Weather Alerts</p>
-
-      <div class="list-item" style="border-color:rgba(255,214,10,0.2);">
-        <div class="list-icon" style="background:rgba(255,214,10,0.12);color:var(--yellow);"><i class="fa-solid fa-cloud-showers-heavy"></i></div>
-        <div class="list-info">
-          <h4 style="color:var(--yellow)">Rain Warning — Mumbai</h4>
-          <p>72mm expected · Threshold: 64.5mm</p>
-        </div>
-        <span class="tag warning">Near</span>
-      </div>
-      <div class="list-item" style="border-color:rgba(255,59,48,0.2);">
-        <div class="list-icon" style="background:rgba(255,59,48,0.12);color:var(--red);"><i class="fa-solid fa-temperature-arrow-up"></i></div>
-        <div class="list-info">
-          <h4 style="color:var(--red)">Extreme Heat — Delhi</h4>
-          <p>47°C · Threshold: 45°C</p>
-        </div>
-        <span class="tag" style="background:rgba(255,59,48,0.12);color:var(--red);">Breach</span>
-      </div>
-      <div class="list-item" style="border-color:rgba(52,199,89,0.2);">
-        <div class="list-icon safe"><i class="fa-solid fa-sun"></i></div>
-        <div class="list-info">
-          <h4 style="color:var(--green)">All Clear — Bangalore</h4>
-          <p>32°C · AQI 78 · Safe to work</p>
-        </div>
-        <span class="tag safe">Safe</span>
-      </div>
-
-      <p class="section-label">Environmental Sensors</p>
-
-      <div class="monitor-card">
-        <div class="monitor-top">
-          <div class="left"><i class="fa-solid fa-cloud-showers-heavy"></i> <span>Rainfall</span></div>
-          <div class="reading" style="color:var(--yellow)">58mm</div>
-        </div>
-        <div class="progress-track"><div class="progress-fill yellow" style="width:72%"></div></div>
-        <div class="threshold-row"><span>0mm</span><span>Threshold: 64.5mm</span><span>100mm</span></div>
-      </div>
-
-      <div class="monitor-card">
-        <div class="monitor-top">
-          <div class="left"><i class="fa-solid fa-temperature-half"></i> <span>Temperature</span></div>
-          <div class="reading" style="color:var(--green)">32°C</div>
-        </div>
-        <div class="progress-track"><div class="progress-fill green" style="width:45%"></div></div>
-        <div class="threshold-row"><span>20°C</span><span>Threshold: 45°C</span><span>55°C</span></div>
-      </div>
-
-      <div class="monitor-card">
-        <div class="monitor-top">
-          <div class="left"><i class="fa-solid fa-smog"></i> <span>AQI</span></div>
-          <div class="reading" style="color:var(--green)">78</div>
-        </div>
-        <div class="progress-track"><div class="progress-fill green" style="width:16%"></div></div>
-        <div class="threshold-row"><span>0</span><span>Threshold: 400</span><span>500</span></div>
-      </div>
-
-      <div class="monitor-card">
-        <div class="monitor-top">
-          <div class="left"><i class="fa-solid fa-wind"></i> <span>Wind</span></div>
-          <div class="reading" style="color:var(--green)">18km/h</div>
-        </div>
-        <div class="progress-track"><div class="progress-fill green" style="width:24%"></div></div>
-        <div class="threshold-row"><span>0</span><span>Threshold: 60km/h</span><span>80</span></div>
-      </div>
-
-      <div class="insight-card" style="margin-top:16px;">
-        <div class="insight-header">
-          <i class="fa-solid fa-satellite-dish"></i>
-          <span>Data Sources</span>
-        </div>
-        <p>Readings from <strong>OpenWeatherMap</strong>, <strong>IMD</strong>, <strong>CPCB AQI</strong>, and <strong>NDMA</strong>. Every claim needs 2+ source verification.</p>
-      </div>
-    </section>
-
-    <!-- ==================== PROFILE ==================== -->
-    <section id="page-profile" class="page-view">
-
-      <div class="profile-top">
-        <div class="profile-pic" id="profileAvatar">R</div>
-        <h2 id="profileName">Ravi Kumar</h2>
-        <p id="profileSub">Zomato & Swiggy Partner · Bangalore, KA</p>
-        <div style="margin-top:10px;">
-          <span class="badge-active"><span class="dot"></span> Policy Active</span>
-        </div>
-      </div>
-
-      <div class="stat-row">
-        <div class="stat-card">
-          <div class="label">Member Since</div>
-          <div class="value white">Jan 2026</div>
-        </div>
-        <div class="stat-card">
-          <div class="label">NCD Bonus</div>
-          <div class="value lime">15%</div>
-        </div>
-      </div>
-
-      <p class="section-label">Account</p>
-      <div class="menu-item">
-        <i class="fa-solid fa-location-dot"></i>
-        <div class="info"><h4>Delivery Zones</h4><p>Koramangala, Indiranagar, HSR</p></div>
-        <i class="fa-solid fa-chevron-right arrow"></i>
-      </div>
-      <div class="menu-item">
-        <i class="fa-solid fa-clock-rotate-left"></i>
-        <div class="info"><h4>Payment History</h4><p>Premiums & payout statements</p></div>
-        <i class="fa-solid fa-chevron-right arrow"></i>
-      </div>
-      <div class="menu-item">
-        <i class="fa-solid fa-id-card"></i>
-        <div class="info"><h4>KYC Documents</h4><p>Aadhaar & Platform ID verified</p></div>
-        <i class="fa-solid fa-chevron-right arrow"></i>
-      </div>
-      <div class="menu-item">
-        <i class="fa-brands fa-whatsapp"></i>
-        <div class="info"><h4>WhatsApp Alerts</h4><p>Claim & payout notifications</p></div>
-        <i class="fa-solid fa-chevron-right arrow"></i>
-      </div>
-      <div class="menu-item">
-        <i class="fa-solid fa-language"></i>
-        <div class="info"><h4>Language</h4><p>English · हिंदी · ಕನ್ನಡ</p></div>
-        <i class="fa-solid fa-chevron-right arrow"></i>
-      </div>
-      <div class="menu-item">
-        <i class="fa-solid fa-headset"></i>
-        <div class="info"><h4>Help & Support</h4><p>24/7 chat support</p></div>
-        <i class="fa-solid fa-chevron-right arrow"></i>
-      </div>
-
-      <button class="btn btn-signout" onclick="handleSignOut()">
-        <i class="fa-solid fa-right-from-bracket"></i> Sign Out
-      </button>
-
-      <div class="app-footer">
-        <p>GigShield AI v1.0 · Guidewire DEVTrails 2026</p>
-      </div>
-    </section>
-
-  </main>
-
-  <!-- Bottom Navigation -->
-  <nav class="bottom-nav">
-    <button class="nav-item active" data-page="page-home">
-      <i class="fa-solid fa-house"></i><span>Home</span>
-    </button>
-    <button class="nav-item" data-page="page-premium">
-      <i class="fa-solid fa-calculator"></i><span>Premium</span>
-    </button>
-    <button class="nav-item" data-page="page-claims">
-      <i class="fa-solid fa-receipt"></i><span>Claims</span>
-    </button>
-    <button class="nav-item" data-page="page-monitor">
-      <i class="fa-solid fa-tower-broadcast"></i><span>Monitor</span>
-    </button>
-    <button class="nav-item" data-page="page-profile">
-      <i class="fa-solid fa-user"></i><span>Profile</span>
-    </button>
-  </nav>
-
-  <!-- Claim Modal -->
-  <div class="modal-overlay" id="claimModal" onclick="if(event.target===this)closeClaimModal()">
-    <div class="modal-content">
-      <div class="modal-handle"></div>
-      <h2 class="modal-title">File a Claim</h2>
-      <p class="modal-subtitle">Use only if auto-detection missed an event</p>
-      <div class="form-group">
-        <label class="form-label">Disruption Type</label>
-        <select class="form-select">
-          <option>Heavy Rainfall</option>
-          <option>Extreme Heat</option>
-          <option>Flooding</option>
-          <option>Air Quality (AQI)</option>
-          <option>Curfew / Bandh</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label class="form-label">City / Zone</label>
-        <select class="form-select">
-          <option>Mumbai — Andheri</option>
-          <option>Delhi — NCR</option>
-          <option>Bangalore — Koramangala</option>
-          <option>Chennai — Central</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label class="form-label">Days Affected</label>
-        <select class="form-select">
-          <option>1 Day</option>
-          <option>2 Days</option>
-          <option selected>3 Days</option>
-          <option>4 Days</option>
-          <option>5+ Days</option>
-        </select>
-      </div>
-      <button class="btn btn-lime" onclick="fileClaim()">
-        <i class="fa-solid fa-paper-plane"></i> Submit Claim
-      </button>
-      <button class="btn btn-dark" style="margin-top:8px;" onclick="closeClaimModal()">Cancel</button>
     </div>
-  </div>
+  </section>
 
-  <script src="app.js"></script>
+  <!-- AI ENGINE -->
+  <section class="section section-alt" id="ai">
+    <div class="section-inner">
+      <p class="section-tag"><i class="fa-solid fa-microchip"></i> AI/ML Engine</p>
+      <h2 class="section-title">Powered by <span class="text-glow pixel-font">5 AI Models</span></h2>
+      <p class="section-desc">Enterprise-grade ML pipeline for risk scoring, dynamic pricing, fraud detection, and
+        predictive coverage.</p>
+      <div class="ai-grid">
+        <div class="ai-card">
+          <div class="ai-model">XGBoost</div>
+          <h4>Zone Risk Scorer</h4>
+          <p>Pin-code level risk from historical weather + disruption frequency</p>
+        </div>
+        <div class="ai-card">
+          <div class="ai-model">Prophet</div>
+          <h4>Seasonal Adjuster</h4>
+          <p>Time-series forecasting for seasonal premium multipliers</p>
+        </div>
+        <div class="ai-card">
+          <div class="ai-model">LSTM</div>
+          <h4>Predictive Pricing</h4>
+          <p>7-day weather forecasts → next-week premium adjustment (±15%)</p>
+        </div>
+        <div class="ai-card">
+          <div class="ai-model">Isolation Forest</div>
+          <h4>Fraud Detection</h4>
+          <p>Anomaly detection in claims — flags unusual patterns in real-time</p>
+        </div>
+        <div class="ai-card">
+          <div class="ai-model">BERT NLP</div>
+          <h4>News Analysis</h4>
+          <p>Auto-confirm curfew/bandh events from news feeds & govt advisories</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FRAUD DETECTION -->
+  <section class="section" id="fraud">
+    <div class="section-inner">
+      <p class="section-tag"><i class="fa-solid fa-shield-halved"></i> Anti-Fraud</p>
+      <h2 class="section-title"><span class="text-glow">4-Layer</span> Fraud Detection Pipeline</h2>
+      <div class="fraud-pipeline">
+        <div class="fraud-step">
+          <div class="fraud-num">1</div>
+          <h4>Parametric Validation</h4>
+          <p>2+ independent data sources must confirm the disruption event</p>
+        </div>
+        <div class="fraud-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+        <div class="fraud-step">
+          <div class="fraud-num">2</div>
+          <h4>Location Verification</h4>
+          <p>GPS trajectory + cell tower triangulation + platform order logs</p>
+        </div>
+        <div class="fraud-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+        <div class="fraud-step">
+          <div class="fraud-num">3</div>
+          <h4>AI Anomaly Check</h4>
+          <p>Behavioral biometrics: step count, accelerometer, ambient audio</p>
+        </div>
+        <div class="fraud-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+        <div class="fraud-step">
+          <div class="fraud-num">4</div>
+          <h4>Syndicate Detection</h4>
+          <p>Graph Neural Network detects coordinated fraud rings</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TECH STACK -->
+  <section class="section section-alt" id="tech">
+    <div class="section-inner">
+      <p class="section-tag"><i class="fa-solid fa-layer-group"></i> Tech Stack</p>
+      <h2 class="section-title">Built with <span class="text-glow">Modern Technology</span></h2>
+      <div class="tech-grid">
+        <div class="tech-item"><span class="tech-label">Frontend</span><span>React.js · TypeScript · Tailwind ·
+            PWA</span></div>
+        <div class="tech-item"><span class="tech-label">Backend</span><span>Node.js · Express · Python FastAPI</span>
+        </div>
+        <div class="tech-item"><span class="tech-label">AI/ML</span><span>XGBoost · Prophet · LSTM · BERT</span></div>
+        <div class="tech-item"><span class="tech-label">Database</span><span>PostgreSQL · Redis · MongoDB</span></div>
+        <div class="tech-item"><span class="tech-label">Payments</span><span>Razorpay UPI Sandbox</span></div>
+        <div class="tech-item"><span class="tech-label">APIs</span><span>OpenWeatherMap · CPCB · IMD · NDMA</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="section cta-section">
+    <div class="section-inner" style="text-align:center;">
+      <h2 class="section-title" style="max-width:700px;margin:0 auto 16px;">Every Delivery Matters. Every Partner
+        Deserves <span class="text-glow">Protection.</span></h2>
+      <p class="section-desc" style="max-width:500px;margin:0 auto 32px;">Join India's first AI-powered parametric
+        insurance platform built exclusively for gig workers.</p>
+      <div class="hero-ctas" style="justify-content:center;">
+        <a href="https://gigshield-ai.netlify.app" class="btn-primary"><i class="fa-solid fa-bolt"></i> Start Free <i
+            class="fa-solid fa-arrow-right"></i></a>
+        <a href="https://gigshield-ai.netlify.app" class="btn-outline">View Dashboard</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="nav-logo"><i class="fa-solid fa-shield-halved"></i></div>
+        <span>GigShield AI</span>
+        <p>AI-Powered Parametric Insurance for Gig Workers</p>
+      </div>
+      <div class="footer-links">
+        <div>
+          <h4>Product</h4><a href="#solution">Solution</a><a href="#how-it-works">How It Works</a><a
+            href="#pricing">Pricing</a>
+        </div>
+        <div>
+          <h4>Technology</h4><a href="#ai">AI Engine</a><a href="#fraud">Anti-Fraud</a><a href="#tech">Tech Stack</a>
+        </div>
+        <div>
+          <h4>Company</h4><a href="#">About</a><a href="https://github.com/swamoth/AlterDime-GuideWire">Team
+            AlterDime</a><a href="#">Guidewire DEVTrails</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 GigShield AI · Team AlterDime · Guidewire DEVTrails 2026</span>
+      <span>Built with <i class="fa-solid fa-heart" style="color:#CBFF00;"></i> for Gig Workers</span>
+    </div>
+  </footer>
+
+  <script>
+    // Particle canvas
+    const canvas = document.getElementById('particles');
+    const ctx = canvas.getContext('2d');
+    let particles = [];
+    function resize() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
+    window.addEventListener('resize', resize); resize();
+    class Particle {
+      constructor() { this.reset(); }
+      reset() {
+        this.x = Math.random() * canvas.width;
+        this.y = Math.random() * canvas.height;
+        this.size = Math.random() * 2 + 0.5;
+        this.speedX = (Math.random() - 0.5) * 0.3;
+        this.speedY = (Math.random() - 0.5) * 0.3;
+        this.opacity = Math.random() * 0.5 + 0.1;
+      }
+      update() {
+        this.x += this.speedX; this.y += this.speedY;
+        if (this.x < 0 || this.x > canvas.width || this.y < 0 || this.y > canvas.height) this.reset();
+      }
+      draw() {
+        ctx.beginPath(); ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(203, 255, 0, ${this.opacity})`; ctx.fill();
+      }
+    }
+    for (let i = 0; i < 80; i++) particles.push(new Particle());
+    function animate() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      particles.forEach(p => { p.update(); p.draw(); });
+      requestAnimationFrame(animate);
+    }
+    animate();
+
+    // Navbar scroll
+    window.addEventListener('scroll', () => {
+      document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 50);
+    });
+
+    // Mobile menu
+    document.getElementById('mobileToggle').addEventListener('click', () => {
+      document.getElementById('mobileMenu').classList.toggle('open');
+    });
+
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        e.preventDefault();
+        const t = document.querySelector(a.getAttribute('href'));
+        if (t) { t.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+        document.getElementById('mobileMenu').classList.remove('open');
+      });
+    });
+
+    // Scroll reveal
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('revealed'); });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.section-inner, .hero-content').forEach(el => observer.observe(el));
+  </script>
 </body>
+
 </html>
