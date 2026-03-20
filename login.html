@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -8,11 +9,19 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <title>Login — GigShield AI</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <style>
     /* === Reset & Base === */
-    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    *,
+    *::before,
+    *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
     :root {
       --bg-primary: #0D0D0D;
@@ -26,14 +35,16 @@
       --text-primary: #FFFFFF;
       --text-secondary: #8E8E93;
       --text-tertiary: #48484A;
-      --border: rgba(255,255,255,0.06);
-      --border-lime: rgba(203,255,0,0.2);
+      --border: rgba(255, 255, 255, 0.06);
+      --border-lime: rgba(203, 255, 0, 0.2);
       --radius: 16px;
       --radius-sm: 12px;
       --radius-xs: 8px;
     }
 
-    html { font-size: 16px; }
+    html {
+      font-size: 16px;
+    }
 
     body {
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -52,10 +63,10 @@
       position: fixed;
       inset: 0;
       z-index: 0;
-      background: 
-        radial-gradient(ellipse at 20% 50%, rgba(203,255,0,0.06) 0%, transparent 50%),
-        radial-gradient(ellipse at 80% 20%, rgba(0,122,255,0.04) 0%, transparent 50%),
-        radial-gradient(ellipse at 50% 80%, rgba(52,199,89,0.04) 0%, transparent 50%),
+      background:
+        radial-gradient(ellipse at 20% 50%, rgba(203, 255, 0, 0.06) 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 20%, rgba(0, 122, 255, 0.04) 0%, transparent 50%),
+        radial-gradient(ellipse at 50% 80%, rgba(52, 199, 89, 0.04) 0%, transparent 50%),
         var(--bg-primary);
     }
 
@@ -78,58 +89,72 @@
     }
 
     .d-cube {
-      width: 100px; height: 100px;
+      width: 100px;
+      height: 100px;
       border-radius: 24px;
       background: rgba(26, 26, 26, 0.6);
-      border: 1px solid rgba(203, 255, 0, 0.2); /* lime */
-      box-shadow: 
-        inset 4px 4px 15px rgba(255,255,255,0.04),
-        inset -6px -6px 20px rgba(0,0,0,0.6),
-        0 15px 35px rgba(0,0,0,0.5),
+      border: 1px solid rgba(203, 255, 0, 0.2);
+      /* lime */
+      box-shadow:
+        inset 4px 4px 15px rgba(255, 255, 255, 0.04),
+        inset -6px -6px 20px rgba(0, 0, 0, 0.6),
+        0 15px 35px rgba(0, 0, 0, 0.5),
         0 0 40px rgba(203, 255, 0, 0.08);
-      bottom: 20%; left: 12%; transform: rotate(45deg);
+      bottom: 20%;
+      left: 12%;
+      transform: rotate(45deg);
       animation-delay: -2s;
     }
 
     .d-pill {
-      width: 160px; height: 55px;
+      width: 160px;
+      height: 55px;
       border-radius: 55px;
       background: rgba(26, 26, 26, 0.6);
-      border: 1px solid rgba(0, 122, 255, 0.2); /* blue */
-      box-shadow: 
-        inset 4px 4px 15px rgba(255,255,255,0.04),
-        inset -6px -6px 20px rgba(0,0,0,0.6),
-        0 15px 35px rgba(0,0,0,0.5),
+      border: 1px solid rgba(0, 122, 255, 0.2);
+      /* blue */
+      box-shadow:
+        inset 4px 4px 15px rgba(255, 255, 255, 0.04),
+        inset -6px -6px 20px rgba(0, 0, 0, 0.6),
+        0 15px 35px rgba(0, 0, 0, 0.5),
         0 0 40px rgba(0, 122, 255, 0.08);
-      top: 15%; right: 12%; transform: rotate(-30deg);
+      top: 15%;
+      right: 12%;
+      transform: rotate(-30deg);
       animation-delay: -5s;
     }
 
     .d-donut {
-      width: 140px; height: 140px;
+      width: 140px;
+      height: 140px;
       border-radius: 50%;
       border: 35px solid rgba(26, 26, 26, 0.6);
-      box-shadow: 
-        inset 5px 5px 15px rgba(255,255,255,0.03),
-        inset -5px -5px 15px rgba(0,0,0,0.6),
-        -5px -5px 15px rgba(255,255,255,0.03),
-        5px 5px 15px rgba(0,0,0,0.6),
-        0 0 40px rgba(52, 199, 89, 0.08); 
-      border-color: rgba(52, 199, 89, 0.15); /* green */
-      top: 60%; right: 8%; transform: rotate(15deg);
+      box-shadow:
+        inset 5px 5px 15px rgba(255, 255, 255, 0.03),
+        inset -5px -5px 15px rgba(0, 0, 0, 0.6),
+        -5px -5px 15px rgba(255, 255, 255, 0.03),
+        5px 5px 15px rgba(0, 0, 0, 0.6),
+        0 0 40px rgba(52, 199, 89, 0.08);
+      border-color: rgba(52, 199, 89, 0.15);
+      /* green */
+      top: 60%;
+      right: 8%;
+      transform: rotate(15deg);
       animation-delay: -8s;
     }
 
     .d-sphere {
-      width: 110px; height: 110px;
+      width: 110px;
+      height: 110px;
       border-radius: 50%;
       background: radial-gradient(circle at 35% 35%, rgba(203, 255, 0, 0.1), rgba(26, 26, 26, 0.7) 60%);
       border: 1px solid rgba(203, 255, 0, 0.15);
-      box-shadow: 
-        inset -10px -10px 20px rgba(0,0,0,0.8),
-        0 15px 35px rgba(0,0,0,0.5),
+      box-shadow:
+        inset -10px -10px 20px rgba(0, 0, 0, 0.8),
+        0 15px 35px rgba(0, 0, 0, 0.5),
         0 0 40px rgba(203, 255, 0, 0.08);
-      top: 25%; left: 8%;
+      top: 25%;
+      left: 8%;
       animation-delay: -4s;
     }
 
@@ -141,21 +166,64 @@
       font-size: 4rem;
       animation: floatShield 30s infinite ease-in-out;
     }
-    .shield-1 { top: 15%; left: 8%; animation-delay: 0s; font-size: 5rem; }
-    .shield-2 { bottom: 20%; right: 10%; animation-delay: -8s; font-size: 3rem; opacity: 0.04; }
-    .shield-3 { top: 60%; left: 70%; animation-delay: -15s; font-size: 2.5rem; opacity: 0.05; }
+
+    .shield-1 {
+      top: 15%;
+      left: 8%;
+      animation-delay: 0s;
+      font-size: 5rem;
+    }
+
+    .shield-2 {
+      bottom: 20%;
+      right: 10%;
+      animation-delay: -8s;
+      font-size: 3rem;
+      opacity: 0.04;
+    }
+
+    .shield-3 {
+      top: 60%;
+      left: 70%;
+      animation-delay: -15s;
+      font-size: 2.5rem;
+      opacity: 0.05;
+    }
 
     @keyframes floatShape {
-      0%, 100% { transform: translate(0, 0) scale(1); }
-      25% { transform: translate(30px, -30px) scale(1.05); }
-      50% { transform: translate(-20px, 20px) scale(0.95); }
-      75% { transform: translate(15px, 10px) scale(1.02); }
+
+      0%,
+      100% {
+        transform: translate(0, 0) scale(1);
+      }
+
+      25% {
+        transform: translate(30px, -30px) scale(1.05);
+      }
+
+      50% {
+        transform: translate(-20px, 20px) scale(0.95);
+      }
+
+      75% {
+        transform: translate(15px, 10px) scale(1.02);
+      }
     }
 
     @keyframes floatShield {
-      0%, 100% { transform: translate(0, 0) rotate(0deg); }
-      33% { transform: translate(20px, -15px) rotate(5deg); }
-      66% { transform: translate(-10px, 10px) rotate(-3deg); }
+
+      0%,
+      100% {
+        transform: translate(0, 0) rotate(0deg);
+      }
+
+      33% {
+        transform: translate(20px, -15px) rotate(5deg);
+      }
+
+      66% {
+        transform: translate(-10px, 10px) rotate(-3deg);
+      }
     }
 
     /* === Login Container === */
@@ -169,8 +237,15 @@
     }
 
     @keyframes loginFadeIn {
-      from { opacity: 0; transform: translateY(30px) scale(0.96); }
-      to { opacity: 1; transform: translateY(0) scale(1); }
+      from {
+        opacity: 0;
+        transform: translateY(30px) scale(0.96);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
     }
 
     /* === Glass Card === */
@@ -181,7 +256,7 @@
       border: 1px solid rgba(203, 255, 0, 0.1);
       border-radius: 24px;
       padding: 40px 32px;
-      box-shadow: 
+      box-shadow:
         0 0 80px rgba(203, 255, 0, 0.03),
         0 32px 64px rgba(0, 0, 0, 0.5),
         inset 0 1px 0 rgba(255, 255, 255, 0.04);
@@ -196,7 +271,8 @@
     }
 
     .login-logo {
-      width: 36px; height: 36px;
+      width: 36px;
+      height: 36px;
       background: var(--lime);
       border-radius: var(--radius-xs);
       display: flex;
@@ -284,7 +360,7 @@
       box-shadow: 0 0 0 3px rgba(203, 255, 0, 0.08);
     }
 
-    .form-field input:focus + i,
+    .form-field input:focus+i,
     .input-wrapper:focus-within i {
       color: var(--lime);
     }
@@ -354,14 +430,14 @@
     .btn-signin::before {
       content: '';
       position: absolute;
-      top: 0; left: -100%;
-      width: 100%; height: 100%;
-      background: linear-gradient(
-        90deg,
-        transparent,
-        rgba(255, 255, 255, 0.2),
-        transparent
-      );
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg,
+          transparent,
+          rgba(255, 255, 255, 0.2),
+          transparent);
       transition: left 0.5s ease;
     }
 
@@ -396,7 +472,8 @@
     .spinner {
       display: none;
       position: absolute;
-      width: 20px; height: 20px;
+      width: 20px;
+      height: 20px;
       border: 2.5px solid rgba(13, 13, 13, 0.3);
       border-top-color: #0D0D0D;
       border-radius: 50%;
@@ -404,7 +481,9 @@
     }
 
     @keyframes spin {
-      to { transform: rotate(360deg); }
+      to {
+        transform: rotate(360deg);
+      }
     }
 
     /* === Divider === */
@@ -431,48 +510,57 @@
       letter-spacing: 1px;
     }
 
-    /* === Social Buttons === */
-    .social-row {
-      display: flex;
-      gap: 12px;
-      margin-bottom: 28px;
-    }
-
-    .btn-social {
-      flex: 1;
+    /* === Skip to Dashboard Button === */
+    .btn-skip {
       display: flex;
       align-items: center;
       justify-content: center;
       gap: 8px;
-      padding: 12px 8px;
-      background: rgba(255, 255, 255, 0.04);
-      border: 1px solid var(--border);
+      width: 100%;
+      padding: 16px 24px;
+      background: var(--lime);
+      color: #0D0D0D;
+      border: none;
       border-radius: var(--radius-sm);
-      color: var(--text-primary);
       font-family: 'Inter', sans-serif;
-      font-size: 0.95rem;
+      font-size: 0.88rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
       cursor: pointer;
-      transition: all 0.2s ease;
-      text-decoration: none;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+      margin-top: 16px;
+      margin-bottom: 28px;
     }
 
-    .btn-social:hover {
-      background: rgba(255, 255, 255, 0.08);
-      border-color: rgba(255, 255, 255, 0.12);
+    .btn-skip::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg,
+          transparent,
+          rgba(255, 255, 255, 0.2),
+          transparent);
+      transition: left 0.5s ease;
+    }
+
+    .btn-skip:hover::before {
+      left: 100%;
+    }
+
+    .btn-skip:hover {
+      background: var(--lime-dark);
+      box-shadow: 0 0 30px rgba(203, 255, 0, 0.25);
       transform: translateY(-1px);
     }
 
-    .btn-social:active {
-      transform: scale(0.97);
-    }
-
-    .btn-social .google-icon {
-      font-size: 1rem;
-      background: linear-gradient(135deg, #4285F4, #EA4335, #FBBC05, #34A853);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      font-weight: 900;
+    .btn-skip:active {
+      transform: scale(0.98) translateY(0);
     }
 
     /* === Register Link === */
@@ -532,15 +620,27 @@
         padding: 32px 24px;
         border-radius: 20px;
       }
+
       .login-title {
         font-size: 1.7rem;
       }
     }
 
     @media (min-width: 768px) {
-      .shape-1 { width: 500px; height: 500px; }
-      .shape-2 { width: 350px; height: 350px; }
-      .shape-3 { width: 250px; height: 250px; }
+      .shape-1 {
+        width: 500px;
+        height: 500px;
+      }
+
+      .shape-2 {
+        width: 350px;
+        height: 350px;
+      }
+
+      .shape-3 {
+        width: 250px;
+        height: 250px;
+      }
 
       .login-card {
         padding: 48px 40px;
@@ -550,27 +650,44 @@
     /* === Theme Toggle on Login === */
     .login-theme-toggle {
       position: fixed;
-      top: 20px; right: 20px;
-      width: 40px; height: 40px;
+      top: 20px;
+      right: 20px;
+      width: 40px;
+      height: 40px;
       border-radius: 50%;
-      background: rgba(255,255,255,0.08);
-      border: 1px solid rgba(255,255,255,0.1);
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.1);
       color: var(--text-secondary);
       font-size: 1rem;
-      display: flex; align-items: center; justify-content: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       cursor: pointer;
       z-index: 100;
       transition: all 0.3s ease;
       backdrop-filter: blur(12px);
     }
+
     .login-theme-toggle:hover {
-      background: rgba(255,255,255,0.15);
+      background: rgba(255, 255, 255, 0.15);
       color: var(--text-primary);
     }
-    .login-theme-toggle .icon-sun { display: none; }
-    .login-theme-toggle .icon-moon { display: inline; }
-    [data-theme="light"] .login-theme-toggle .icon-sun { display: inline; }
-    [data-theme="light"] .login-theme-toggle .icon-moon { display: none; }
+
+    .login-theme-toggle .icon-sun {
+      display: none;
+    }
+
+    .login-theme-toggle .icon-moon {
+      display: inline;
+    }
+
+    [data-theme="light"] .login-theme-toggle .icon-sun {
+      display: inline;
+    }
+
+    [data-theme="light"] .login-theme-toggle .icon-moon {
+      display: none;
+    }
 
     /* === Light Theme Login Overrides — Purple Palette === */
     [data-theme="light"] {
@@ -618,7 +735,9 @@
       box-shadow: 0 4px 12px rgba(108, 92, 231, 0.2);
     }
 
-    [data-theme="light"] .login-brand-text { color: #6C5CE7; }
+    [data-theme="light"] .login-brand-text {
+      color: #6C5CE7;
+    }
 
     [data-theme="light"] .login-title {
       background: linear-gradient(135deg, #1A1D2E 0%, #6C5CE7 100%);
@@ -630,6 +749,7 @@
       background: rgba(108, 92, 231, 0.03);
       border-color: rgba(108, 92, 231, 0.1);
     }
+
     [data-theme="light"] .form-field input:focus {
       border-color: #6C5CE7;
       background: rgba(108, 92, 231, 0.05);
@@ -640,21 +760,29 @@
       background: linear-gradient(135deg, #6C5CE7, #7C6FF0);
       color: #FFFFFF;
     }
+
     [data-theme="light"] .btn-signin:hover {
       background: #5A4BD1;
       box-shadow: 0 8px 24px rgba(108, 92, 231, 0.25);
     }
 
-    [data-theme="light"] .btn-social {
-      background: rgba(108, 92, 231, 0.03);
-      border: 1px solid rgba(108, 92, 231, 0.08);
-    }
-    [data-theme="light"] .btn-social:hover {
-      background: rgba(108, 92, 231, 0.08);
+    [data-theme="light"] .btn-skip {
+      background: linear-gradient(135deg, #6C5CE7, #7C6FF0);
+      color: #FFFFFF;
     }
 
-    [data-theme="light"] .forgot-link { color: #6C5CE7; }
-    [data-theme="light"] .register-link { color: #6C5CE7; }
+    [data-theme="light"] .btn-skip:hover {
+      background: #5A4BD1;
+      box-shadow: 0 8px 24px rgba(108, 92, 231, 0.25);
+    }
+
+    [data-theme="light"] .forgot-link {
+      color: #6C5CE7;
+    }
+
+    [data-theme="light"] .register-link {
+      color: #6C5CE7;
+    }
 
     [data-theme="light"] .toast {
       background: #6C5CE7;
@@ -666,87 +794,137 @@
       border-color: rgba(108, 92, 231, 0.1);
       color: var(--text-secondary);
     }
+
     [data-theme="light"] .login-theme-toggle:hover {
       background: rgba(0, 0, 0, 0.1);
     }
 
     /* === Light Theme 3D Glass Shapes === */
-    .light-shapes { display: none; }
+    .light-shapes {
+      display: none;
+    }
+
     [data-theme="light"] .light-shapes {
       display: block;
-      position: absolute; inset: 0; z-index: 1;
-      overflow: hidden; pointer-events: none;
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      overflow: hidden;
+      pointer-events: none;
     }
-    
+
     .shape-3d {
       position: absolute;
       animation: float3D 15s infinite ease-in-out;
     }
 
     @keyframes float3D {
-      0%, 100% { transform: translateY(0) rotate(0deg); }
-      50% { transform: translateY(-30px) rotate(8deg); }
+
+      0%,
+      100% {
+        transform: translateY(0) rotate(0deg);
+      }
+
+      50% {
+        transform: translateY(-30px) rotate(8deg);
+      }
     }
 
     .s-pill-1 {
-      width: 150px; height: 50px;
+      width: 150px;
+      height: 50px;
       border-radius: 50px;
       background: linear-gradient(135deg, #a29bfe, #6c5ce7);
-      box-shadow: inset 4px 4px 10px rgba(255,255,255,0.6), inset -4px -4px 10px rgba(0,0,0,0.15), 15px 20px 35px rgba(108, 92, 231, 0.3);
-      top: 15%; left: 8%; transform: rotate(-25deg);
+      box-shadow: inset 4px 4px 10px rgba(255, 255, 255, 0.6), inset -4px -4px 10px rgba(0, 0, 0, 0.15), 15px 20px 35px rgba(108, 92, 231, 0.3);
+      top: 15%;
+      left: 8%;
+      transform: rotate(-25deg);
       animation-delay: -2s;
     }
 
     .s-pill-2 {
-      width: 100px; height: 35px;
+      width: 100px;
+      height: 35px;
       border-radius: 35px;
       background: linear-gradient(135deg, #74b9ff, #0984e3);
-      box-shadow: inset 3px 3px 8px rgba(255,255,255,0.6), inset -3px -3px 8px rgba(0,0,0,0.15), 12px 18px 25px rgba(9, 132, 227, 0.3);
-      bottom: 22%; left: 12%; transform: rotate(40deg);
+      box-shadow: inset 3px 3px 8px rgba(255, 255, 255, 0.6), inset -3px -3px 8px rgba(0, 0, 0, 0.15), 12px 18px 25px rgba(9, 132, 227, 0.3);
+      bottom: 22%;
+      left: 12%;
+      transform: rotate(40deg);
       animation-delay: -5s;
     }
 
     .s-donut {
-      width: 180px; height: 180px; border-radius: 50%;
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
       border: 45px solid #a29bfe;
-      box-shadow: 
-        -8px -8px 16px rgba(255,255,255,0.6),
-        10px 10px 25px rgba(108,92,231,0.25),
-        inset -10px -10px 20px rgba(255,255,255,0.6),
-        inset 10px 10px 20px rgba(0,0,0,0.15);
-      top: -8%; right: -8%;
+      box-shadow:
+        -8px -8px 16px rgba(255, 255, 255, 0.6),
+        10px 10px 25px rgba(108, 92, 231, 0.25),
+        inset -10px -10px 20px rgba(255, 255, 255, 0.6),
+        inset 10px 10px 20px rgba(0, 0, 0, 0.15);
+      top: -8%;
+      right: -8%;
       animation-delay: -3s;
     }
 
     .s-macaroni {
-      width: 200px; height: 110px;
+      width: 200px;
+      height: 110px;
       border-radius: 200px 200px 0 0;
-      border: 50px solid #74b9ff; border-bottom: 0;
-      box-shadow: 
-        -8px -8px 16px rgba(255,255,255,0.6),
-        10px 10px 25px rgba(9,132,227,0.25),
-        inset -10px -10px 20px rgba(255,255,255,0.6),
-        inset 10px 10px 20px rgba(0,0,0,0.15);
-      bottom: 10%; right: 5%; transform: rotate(-20deg);
+      border: 50px solid #74b9ff;
+      border-bottom: 0;
+      box-shadow:
+        -8px -8px 16px rgba(255, 255, 255, 0.6),
+        10px 10px 25px rgba(9, 132, 227, 0.25),
+        inset -10px -10px 20px rgba(255, 255, 255, 0.6),
+        inset 10px 10px 20px rgba(0, 0, 0, 0.15);
+      bottom: 10%;
+      right: 5%;
+      transform: rotate(-20deg);
       animation-delay: -7s;
     }
 
     .s-zigzag {
-      width: 180px; height: 180px;
-      top: 40%; right: 12%;
+      width: 180px;
+      height: 180px;
+      top: 40%;
+      right: 12%;
       animation-delay: -9s;
     }
+
     .zz {
       position: absolute;
       background: linear-gradient(135deg, #a29bfe, #6c5ce7);
       border-radius: 40px;
-      box-shadow: inset 4px 4px 10px rgba(255,255,255,0.6), inset -4px -4px 10px rgba(0,0,0,0.15), 10px 15px 25px rgba(108, 92, 231, 0.3);
+      box-shadow: inset 4px 4px 10px rgba(255, 255, 255, 0.6), inset -4px -4px 10px rgba(0, 0, 0, 0.15), 10px 15px 25px rgba(108, 92, 231, 0.3);
     }
-    .zz-1 { width: 110px; height: 45px; top: 0; left: 0; }
-    .zz-2 { width: 45px; height: 110px; top: 0; left: 65px; z-index: 2; }
-    .zz-3 { width: 110px; height: 45px; top: 65px; left: 65px; }
+
+    .zz-1 {
+      width: 110px;
+      height: 45px;
+      top: 0;
+      left: 0;
+    }
+
+    .zz-2 {
+      width: 45px;
+      height: 110px;
+      top: 0;
+      left: 65px;
+      z-index: 2;
+    }
+
+    .zz-3 {
+      width: 110px;
+      height: 45px;
+      top: 65px;
+      left: 65px;
+    }
   </style>
 </head>
+
 <body>
 
   <!-- Theme Toggle -->
@@ -793,7 +971,7 @@
       </div>
 
       <h1 class="login-title">Login</h1>
-      
+
       <!-- Username -->
       <div class="form-field">
         <label for="login-username">Username</label>
@@ -809,7 +987,8 @@
         <div class="input-wrapper">
           <input type="password" id="login-password" placeholder="Password" autocomplete="current-password">
           <i class="fa-solid fa-lock"></i>
-          <button class="password-toggle" type="button" onclick="togglePassword()" aria-label="Toggle password visibility">
+          <button class="password-toggle" type="button" onclick="togglePassword()"
+            aria-label="Toggle password visibility">
             <i class="fa-solid fa-eye" id="toggleIcon"></i>
           </button>
         </div>
@@ -826,23 +1005,10 @@
         <div class="spinner"></div>
       </button>
 
-      <!-- Divider -->
-      <div class="divider">
-        <span>or continue with</span>
-      </div>
-
-      <!-- Social Login -->
-      <div class="social-row">
-        <button class="btn-social" onclick="socialLogin('Google')">
-          <span class="google-icon">G</span>
-        </button>
-        <button class="btn-social" onclick="socialLogin('GitHub')">
-          <i class="fa-brands fa-github"></i>
-        </button>
-        <button class="btn-social" onclick="socialLogin('Facebook')">
-          <i class="fa-brands fa-facebook-f" style="color: #1877F2;"></i>
-        </button>
-      </div>
+      <!-- Skip to Dashboard -->
+      <button class="btn-skip" onclick="skipToDashboard()">
+        <i class="fa-solid fa-forward"></i> Skip to Dashboard
+      </button>
 
       <!-- Register -->
       <div class="register-row">
@@ -892,15 +1058,14 @@
       }, 1200);
     }
 
-    // Social login handler
-    function socialLogin(provider) {
-      const name = provider + ' User';
-      localStorage.setItem('gigshield_user', name);
-      localStorage.setItem('gigshield_email', name.toLowerCase().replace(' ', '') + '@gmail.com');
-      showToast(`Signing in with ${provider}...`);
+    // Skip to Dashboard — bypass login with dummy user
+    function skipToDashboard() {
+      localStorage.setItem('gigshield_user', 'Swagat');
+      localStorage.setItem('gigshield_email', 'swagat@gigshield.ai');
+      showToast('Skipping to dashboard...');
       setTimeout(() => {
         window.location.href = 'index.html';
-      }, 1500);
+      }, 800);
     }
 
     // Toast notification
@@ -937,4 +1102,5 @@
   </script>
 
 </body>
+
 </html>
