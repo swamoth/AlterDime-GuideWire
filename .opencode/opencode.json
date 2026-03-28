@@ -1,0 +1,10 @@
+{
+  "permission": {
+    "read": {
+      "C:/Users/swaga/Downloads/ppt/AlterDime-GuideWire/.opencode/get-shit-done/*": "allow"
+    },
+    "external_directory": {
+      "C:/Users/swaga/Downloads/ppt/AlterDime-GuideWire/.opencode/get-shit-done/*": "allow"
+    }
+  }
+}
