@@ -9,6 +9,11 @@ dist/
 web-build/
 expo-env.d.ts
 
+# IDEs and Editors
+.idea/
+.vscode/
+
+
 # Native
 .kotlin/
 *.orig.*
@@ -30,8 +35,12 @@ yarn-error.*
 .DS_Store
 *.pem
 
-# local env files
+# Environment variables - NEVER commit API keys!
+.env
+.env.local
 .env*.local
+.env.development
+.env.production
 
 # typescript
 *.tsbuildinfo
@@ -39,3 +48,6 @@ yarn-error.*
 # generated native folders
 /ios
 /android
+
+# EAS
+.eas/

@@ -1,30 +1,72 @@
 {
   "expo": {
-    "name": "GigShieldAI",
+    "name": "GigShield AI",
     "slug": "GigShieldAI",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
-    "userInterfaceStyle": "light",
+    "userInterfaceStyle": "dark",
+    "scheme": "gigshield",
     "splash": {
-      "image": "./assets/splash-icon.png",
+      "image": "./assets/transparent.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#0D0D0D"
     },
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.alterdime.gigshield",
+      "infoPlist": {
+        "NSCameraUsageDescription": "GigShield AI needs camera access to capture photo evidence for claim validation.",
+        "NSLocationWhenInUseUsageDescription": "GigShield AI needs your location to verify you are in the disruption zone for claim validation."
+      }
     },
     "android": {
       "adaptiveIcon": {
-        "backgroundColor": "#E6F4FE",
-        "foregroundImage": "./assets/android-icon-foreground.png",
-        "backgroundImage": "./assets/android-icon-background.png",
-        "monochromeImage": "./assets/android-icon-monochrome.png"
+        "backgroundColor": "#000000",
+        "foregroundImage": "./assets/adaptive-icon.png"
       },
-      "predictiveBackGestureEnabled": false
+      "package": "com.alterdime.gigshield",
+      "predictiveBackGestureEnabled": false,
+      "permissions": [
+        "CAMERA",
+        "ACCESS_FINE_LOCATION",
+        "ACCESS_COARSE_LOCATION",
+        "WRITE_EXTERNAL_STORAGE",
+        "READ_MEDIA_IMAGES"
+      ]
     },
     "web": {
-      "favicon": "./assets/favicon.png"
+      "favicon": "./assets/favicon.png",
+      "bundler": "metro"
+    },
+    "plugins": [
+      "expo-router",
+      "expo-font",
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "GigShield AI needs camera access to capture photo evidence for claim validation and anti-spoofing verification."
+        }
+      ],
+      [
+        "expo-location",
+        {
+          "locationAlwaysAndWhenInUsePermission": "GigShield AI needs your GPS location to validate you were in the disruption zone. This helps speed up your payout."
+        }
+      ],
+      [
+        "expo-media-library",
+        {
+          "photosPermission": "GigShield AI needs access to save claim evidence photos to your device.",
+          "isAccessMediaLocationEnabled": true
+        }
+      ]
+    ],
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "e9e1d8cd-5f2e-4f09-8617-dcf496a59c9d"
+      }
     }
   }
 }
